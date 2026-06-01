@@ -4,7 +4,7 @@
 <head>
     <meta charest="UTF-8">
     <title>フォーム入力</title>
-    <link rel="stylesheet" herf="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -15,16 +15,16 @@
     <form action="confirm.php" method="post">
 
         <label for="name">名前:</label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name"required>
 
         <label for="age">年齢:</label>
-        <input type="text" id="age" name="age">
+        <input type="text" id="age" name="age" min="0" max="150" required>
 
         <label for="phone">電話番号:</label>
-        <input type="text" id="phone" name="phone">
+        <input type="text" id="phone" name="phone" pattern="[0-9\-]+" required>
 
         <label for="email">メールアドレス:</label>
-        <input type="text" id="email" name="email">
+        <input type="email" id="email" name="email"required>
 
         <label for="address">住所:</label>
         <input type="text" id="address" name="address">
