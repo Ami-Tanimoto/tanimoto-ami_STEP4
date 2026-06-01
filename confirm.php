@@ -5,31 +5,29 @@ $age = $_POST['age'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
 $address = $_POST['address'];
-$quiestion = $_POST['question'];
+$question = $_POST['question'];
 $gender = $_POST['gender'];
 
 $errors = [];
 
 /* 名前　*/
-if (!preg_match('/^[ぁ-んァ-ヶー一-龠a-zA-Z\s]+$/u', $name)) {
-    $errors[] = '名前の形式が正しくありません';
+if (!preg_match('/^[ぁ-んァ-ヶー一-龠a-zA-Z]+$/u', $name)) {
+    $errors[] = '名前はひらがな、カタカナ、漢字、英字のみ使用できます。';
 }
 
 /* 年齢　*/
-$age = $_POST['age'] ?? null;
 if (!is_numeric($age) || $age < 0 || $age > 150) {
-    $errors[] = '年齢は0~150で入力してください';
+    $errors[] = '年齢は0から150の間で入力してください。';
 }
 
 /* 電話番号　*/
-$phone = $_POST['phone'] ?? '';
 if (!preg_match('/^[0-9\-]+$/',$phone)) {
-    $errors[] = '電話番号の形式が正しくありません';
+    $errors[] = '電話番号は半角数字とハイフンのみ使用できます。';
 }
 
 /* メール　*/
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = 'メールアドレスの形式が正しくありません';
+    $errors[] = 'メールアドレスの形式が正しくありません。';
 }
 
 /* 住所　*/

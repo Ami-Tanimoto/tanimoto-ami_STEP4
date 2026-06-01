@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-    <meta charest="UTF-8">
+    <meta charset="UTF-8">
     <title>フォーム入力</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -39,7 +39,7 @@
             <option value="その他">その他:</option>
         </select>
 
-        <input type="submit" value="送信" class="submit-btn">
+        <input type="submit" id ="submit" name="submit" value="送信" class="submit-btn">
 
     </form>
 
